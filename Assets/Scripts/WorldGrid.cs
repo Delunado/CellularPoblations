@@ -35,5 +35,42 @@ public class WorldGrid : MonoBehaviour
                 worldGrid[x, y] = parcel;
             }
         }
+        
+        //Set neighbours for each parcel
+        for (int x = 0; x < gridSizeX; x++)
+        {
+            for (int y = 0; y < gridSizeY; y++)
+            {
+                ParcelController parcel = worldGrid[x, y];
+                
+                if (x > 0)
+                {
+                    parcel.AddNeighbour(worldGrid[x - 1, y]);
+                }
+                
+                if (x < gridSizeX - 1)
+                {
+                    parcel.AddNeighbour(worldGrid[x + 1, y]);
+                }
+                
+                if (y > 0)
+                {
+                    parcel.AddNeighbour(worldGrid[x, y - 1]);
+                }
+                
+                if (y < gridSizeY - 1)
+                {
+                    parcel.AddNeighbour(worldGrid[x, y + 1]);
+                }
+            }
+        }
+    }
+    
+    public ParcelController GetRandomParcel()
+    {
+        int x = UnityEngine.Random.Range(0, gridSizeX);
+        int y = UnityEngine.Random.Range(0, gridSizeY);
+        
+        return worldGrid[x, y];
     }
 }
