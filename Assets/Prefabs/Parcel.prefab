@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7651761516749603596}
   m_Layer: 0
-  m_Name: SextuplePositionPattern
+  m_Name: HexPositionPattern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,6 +485,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   familyController: {fileID: 5350189299057046003}
+  singleFormation: {fileID: 1853070225412078360}
+  doubleFormation: {fileID: 81197117001116710}
+  tripleFormation: {fileID: 5487800663054630844}
+  quadFormation: {fileID: 8597773605078072106}
+  pentaFormation: {fileID: 1118352590280483490}
+  hexaFormation: {fileID: 7651761516749603596}
 --- !u!114 &5350189299057046003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb670e55252bb644ba73a61b295b1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  individualController: {fileID: 8423990472525850026, guid: e539f8d9533049443848dfe77474a364, type: 3}
+  individualController: {fileID: 8756009246457146567, guid: e539f8d9533049443848dfe77474a364, type: 3}
 --- !u!1 &3546033402705982987
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8597773605078072106}
   m_Layer: 0
-  m_Name: QuadruplePositionPattern
+  m_Name: QuadPositionPattern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -700,7 +706,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -751,7 +757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1118352590280483490}
   m_Layer: 0
-  m_Name: QuintuplePositionPattern
+  m_Name: PentaPositionPattern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

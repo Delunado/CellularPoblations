@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,9 +29,10 @@ public class IndividualController : MonoBehaviour
         return Vector3.Distance(transform.position, positionToMove) / speed;
     }
 
-    public void Birth()
+    public void Birth(TweenCallback onBirthComplete = null)
     {
         transform.localScale = new Vector3(0, 0, 0);
-        transform.DOScale(size, growingTime);
+        
+        transform.DOScale(size, growingTime).OnComplete(onBirthComplete);
     }
 }

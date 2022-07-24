@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     {
         // Spawn and individual when timer
         
-        if (timer >= timeLeft)
+        /*if (timer >= timeLeft)
         {
             // Spawn individual
             _worldGrid.GetRandomParcel().FamilyController.CreateIndividual();
@@ -26,6 +26,19 @@ public class GameManager : MonoBehaviour
         } else {
             // Increment timer
             timer += Time.deltaTime;
+        }*/
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DoStep();
+        }
+    }
+
+    public void DoStep()
+    {
+        foreach (FamilyController family in _worldGrid.GetFamilies())
+        {
+            family.DoStep();
         }
     }
 }

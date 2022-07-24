@@ -73,4 +73,16 @@ public class WorldGrid : MonoBehaviour
         
         return worldGrid[x, y];
     }
+    
+    public List<FamilyController> GetFamilies()
+    {
+        List<FamilyController> families = new List<FamilyController>();
+        
+        foreach (ParcelController parcel in worldGrid)
+        {
+            families.Add(parcel.FamilyController);
+        }
+
+        return families;
+    }
 }
