@@ -15,6 +15,8 @@ public class FamilyController : MonoBehaviour
     
     public void CreateIndividual()
     {
-        Instantiate(individualController.gameObject, _parcelController.transform.position, Quaternion.identity);
+        IndividualController i = Instantiate(individualController, _parcelController.transform.position, Quaternion.identity);
+        
+        i.Birth();
     }
 }

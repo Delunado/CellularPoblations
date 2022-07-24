@@ -8,22 +8,26 @@ public class IndividualController : MonoBehaviour
     [SerializeField] private float size;
     [SerializeField] private float growingTime;
     [SerializeField] private float speed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void MoveTowards(Vector3 finalPosition)
     {
-        float movingTime = Vector3.Distance(transform.position, finalPosition)/speed;
+        float movingTime = CalculateMovementTime(finalPosition);
+
         transform.DOMove(finalPosition, movingTime);
     }
+
+    public void MoveTowardsNewFamily(Vector3 familyPosition, Vector3 formationPosition)
+    {
+        float movingTimeFamily = CalculateMovementTime(familyPosition);
+
+        transform.DOMove(familyPosition, movingTimeFamily).OnComplete(() => { MoveTowards(formationPosition); });
+    }
+
+    private float CalculateMovementTime(Vector3 positionToMove)
+    {
+        return Vector3.Distance(transform.position, positionToMove) / speed;
+    }
+
     public void Birth()
     {
         transform.localScale = new Vector3(0, 0, 0);
